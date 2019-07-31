@@ -11,11 +11,7 @@ import DashboardContent from "./dashchild/DashboardContent";
 class Dashboard extends Component {
   state = {};
   render() {
-    return (
-      <React.Fragment>
-        <DashboardContent />
-      </React.Fragment>
-    );
+    return <React.Fragment>ini halaman dashboard</React.Fragment>;
   }
 }
 const mapStateToProps = state => {};

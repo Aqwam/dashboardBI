@@ -17,10 +17,10 @@ const MenuSales = () => {
           }
         >
           <Menu.Item key="demografi">
-            <Link to="/Demografi">Demografi</Link>
+            <Link to="/demografi">Demografi</Link>
           </Menu.Item>
           <Menu.Item key="absensi">
-            <Link to="/Absensi">Absensi</Link>
+            <Link to="/absensi">Absensi</Link>
           </Menu.Item>
         </SubMenu>
       </Menu>

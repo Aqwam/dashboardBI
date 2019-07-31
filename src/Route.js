@@ -6,6 +6,7 @@ import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import EtlCard from "./components/dashboard/dashchild/tabs/component/EtlCard";
 import Absensi from "./components/dashboard/Absensi";
+import DashboardContent from "./components/dashboard/dashchild/DashboardContent";
 
 class Routes extends Component {
   constructor(props) {
@@ -13,22 +14,27 @@ class Routes extends Component {
     this.state = {};
   }
   render() {
-    const { profile, auth } = this.props;
-
     return (
       <Switch>
         <Route
           exact
           path="/"
           render={props => {
-            return <Dashboard auth={auth} profile={profile} {...props} />;
+            return <Dashboard {...props} />;
           }}
         />
         <Route
           exact
           path="/absensi"
           render={props => {
-            return <Absensi auth={auth} profile={profile} {...props} />;
+            return <Absensi {...props} />;
+          }}
+        />
+        <Route
+          exact
+          path="/demografi"
+          render={props => {
+            return <DashboardContent />;
           }}
         />
         <Route
