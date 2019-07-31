@@ -1,0 +1,153 @@
+html {
+    min-height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100%;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+.trigger {
+    font-size: 18px;
+    line-height: 38px;
+    padding-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.ant-menu-item .anticon {
+    font-size: 20px;
+}
+
+.div-logo {
+    padding-left: 24px;
+}
+.trigger:hover {
+    color: #1890ff;
+}
+
+.logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+}
+
+.fadeIn {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 2s linear;
+}
+
+.fadeOut {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+}
+.avatar {
+    margin-right: 10px;
+}
+
+.background-color-grey {
+    background-color: #efefef;
+}
+.page-height {
+    height: 135vh;
+}
+.box-position {
+    padding-top: 100px;
+}
+.background-color-white {
+    background-color: white;
+}
+
+#components-form-demo-normal-login .login-form {
+    max-width: 300px;
+}
+#components-form-demo-normal-login .login-form-forgot {
+    float: right;
+}
+#components-form-demo-normal-login .login-form-button {
+    width: 100%;
+}
+.login-box {
+    width: 300px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    border-width: 1px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login-form-button {
+    width: 100%;
+}
+
+.dashboard-card {
+    height: 100px;
+}
+
+.gutter-example .ant-row > div {
+    background: transparent;
+    border: 0;
+}
+.gutter-box {
+    background: #00a0e9;
+    padding-left: 0px;
+}
+.logoMogo {
+    max-width: 110px;
+}
+.menuLogo {
+    border-right: solid 1px rgba(255, 255, 255, 0.24);
+    padding-right: 15px;
+}
+.errorLogo {
+    display: block;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 22px;
+}
+.splash-loading {
+    display: block;
+    font-size: 190px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+}
+.ant-form-item-label {
+    text-align: left;
+}
+.ant-form-item-with-help {
+    margin-bottom: 0px;
+}
+.ant-form-item {
+    margin-bottom: 0px;
+}
+
+.content-right {
+    position: absolute;
+    right: 5%;
+}
+
+.rv-xy-plot__grid-lines__line {
+    stroke: rgba(128, 128, 128, 0.246);
+    stroke-width: 1;
+}
+.rv-discrete-color-legend-item.horizontal {
+    display: inline-block;
+    margin-right: 5px;
+}
+.content-center {
+    margin-right: auto;
+    margin-left: auto;
+}

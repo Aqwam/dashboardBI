@@ -1,0 +1,80 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /products/{product} {
+      allow read, write:if request.auth.uid !=null 
+    }
+    match /users/{userId}{
+			allow create
+      allow read : if request.auth.uid !=null
+			allow write : if request.auth.uid == userId
+    }
+    match /notifications/{notification} {
+      allow create, read,write
+    }
+    match /transactions/{transaction}{
+	  	allow create
+      allow read
+      allow write
+    }
+    match /restocks/{restock}{
+      allow create
+      allow read
+      allow write
+    }
+    match /purchased/{purchase}{
+      allow create
+      allow read
+      allow write
+    }
+    match /distributors/{distributor}{
+      allow create
+      allow read
+      allow write
+    }    
+    match /transactions/{transaction}{
+      allow create
+      allow read
+      allow write
+    }
+    match /dimCustomers/{data}{
+      allow create
+      allow read
+      allow write
+    }  
+    match /dimDistributors/{data}{
+      allow create
+      allow read
+      allow write
+  	}  
+    match /dimEmployees/{data}{
+    	allow create
+      allow read
+      allow write
+		}  
+    match /dimTimes/{data}{
+    	allow create
+      allow read
+      allow write
+    }
+    match /dimTime/{data}{
+    	allow create
+      allow read
+      allow write
+    }
+    match /dimProducts/{data}{
+    	allow create
+      allow read
+      allow write
+    }  
+    match /factPurchased/{data}{
+    	allow create
+      allow read
+      allow write
+    }
+    match /factSales/{data}{
+    	allow create
+      allow read
+      allow write
+    }
+	}
+}
