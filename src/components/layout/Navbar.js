@@ -64,16 +64,8 @@ class Navbar extends Component {
     }
   };
   render() {
-    const { auth, collapsed, profile, notifications } = this.props;
-    const links = auth.uid ? (
-      <SignedInLinks
-        profile={profile}
-        auth={auth}
-        notifications={notifications}
-      />
-    ) : (
-      <SignedOutLinks />
-    );
+    const { auth, collapsed } = this.props;
+    const links = !auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
     return (
       <React.Fragment>
         <Header

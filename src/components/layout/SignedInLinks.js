@@ -13,11 +13,6 @@ const SignedInLinks = props => {
       <Menu.Item>
         <Link to="/">Profile</Link>
       </Menu.Item>
-
-      <Menu.Item>
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a onClick={props.signOut}>Logout</a>
-      </Menu.Item>
     </Menu>
   );
   return (
@@ -27,26 +22,12 @@ const SignedInLinks = props => {
       role="menu"
     >
       <li className="ant-menu-item " role="menuitem" color="light">
-        <Dropdown overlay={Notifications(notifications)}>
-          <a className="ant-dropdown-link" href="/playground">
-            {/* <Badge dot> */}
-
-            <Icon type="bell" style={{ marginRight: "-24px" }} />
-            {/* </Badge>{" "} */}
-          </a>
-        </Dropdown>
-      </li>
-
-      <li className="ant-menu-item " role="menuitem" color="light">
-        <Dropdown overlay={hehe(props)}>
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <a className="ant-dropdown-link" href="#">
-            {/* <Badge dot> */}
-            <Avatar className="avatar">{props.profile.initials}</Avatar>
-            {/* </Badge>{" "} */}
-            <Icon type="down" />
-          </a>
-        </Dropdown>
+        <Menu>
+          <Menu.Item>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+            <a onClick={props.signOut}>Logout</a>
+          </Menu.Item>
+        </Menu>
       </li>
     </ul>
   );
