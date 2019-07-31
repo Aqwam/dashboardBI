@@ -1,13 +1,10 @@
-import { Menu, Icon, Dropdown, Avatar } from "antd";
-import { Link } from "react-router-dom";
+import { Menu } from "antd";
 import React from "react";
 import { connect } from "react-redux";
 import { signOut } from "../../redux/actions/authActions";
-import Notifications from "./Notifications";
 import { compose } from "redux";
 
 const SignedInLinks = props => {
-  const notifications = props.notifications;
   return (
     <ul
       className=" ant-menu ant-menu-light ant-menu-root ant-menu-horizontal"

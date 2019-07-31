@@ -43,6 +43,16 @@ class Sidebar extends Component {
             {links(profile)}
           </Menu>
         </Sider>
+        <Sider
+          collapsedWidth="0"
+          trigger={null}
+          collapsible
+          collapsed={this.props.collapsed}
+          style={{
+            height: "100vh",
+            zIndex: -1
+          }}
+        />
       </React.Fragment>
     );
   }

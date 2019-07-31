@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import Navbar from "./components/layout/Navbar";
 import Sidebar from "./components/layout/Sidebar";
-import { Layout, Icon } from "antd";
+import { Layout } from "antd";
 import Routes from "./Route";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";

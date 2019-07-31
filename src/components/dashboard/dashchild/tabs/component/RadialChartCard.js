@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Select, DatePicker, Row, Col } from "antd";
+import { Row, Col } from "antd";
 import {
   //   XYPlot,
   //   XAxis,
@@ -11,9 +11,6 @@ import {
   //   Hint,
   RadialChart
 } from "react-vis";
-
-const { Option } = Select;
-const { RangePicker, WeekPicker, MonthPicker } = DatePicker;
 
 class RadialChartCard extends Component {
   constructor(props) {

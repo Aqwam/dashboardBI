@@ -9,7 +9,8 @@ class DropperToCsv extends Component {
     this.state = {
       fileList: [],
       uploading: false,
-      progressVal: 0
+      progressVal: 0,
+      counterData: ""
     };
   }
 
@@ -53,6 +54,9 @@ class DropperToCsv extends Component {
         );
     });
   }
+  checkLog = () => {
+    console.log(this.state.counterData);
+  };
 
   render() {
     const { fileList, uploading, progressVal } = this.state;
@@ -60,7 +64,7 @@ class DropperToCsv extends Component {
       ((progressVal / fileList.length) * 100).toPrecision(2)
     );
     const links = uploading ? <Progress percent={counterProgress} /> : "";
-    const props = {
+    const DropperProps = {
       onRemove: file => {
         this.setState(state => {
           const index = state.fileList.indexOf(file);
@@ -71,14 +75,11 @@ class DropperToCsv extends Component {
           };
         });
       },
-      beforeUpload: file => {
+      beforeUpload: async file => {
+        let pivot = [];
         const isCSV =
           file.type === "application/vnd.ms-excel" ||
           file.name.slice(-3) === "csv";
-        // let counterProd = [];
-        // let counterTime = [];
-        // let counterDist = [];
-        // let counterPurchased = [];
         if (!isCSV) {
           message.error("You can only upload CSV file !");
         } else {
@@ -87,20 +88,16 @@ class DropperToCsv extends Component {
           reader.onload = () => {
             csv.parse(
               reader.result,
-              (err, data) => {
-                data.forEach(data => {
-                  console.log(data);
-                  let counterTime =
-                    data[4].slice(3, 5) +
-                    data[4].slice(0, 2) +
-                    data[4].slice(6, 10);
-                  console.log(counterTime);
-                });
+              async (err, data) => {
+                let wadah = [];
+                data.map(item => wadah.push(item));
+                await (wadah.shift(), this.setState({ counterData: wadah }));
               },
               { comment: "ï»¿", delimiter: ";" }
             );
           };
           reader.readAsBinaryString(file);
+
           // //==
           this.setState(state => ({
             fileList: [...state.fileList, file]
@@ -113,7 +110,7 @@ class DropperToCsv extends Component {
     return (
       <React.Fragment>
         <div>
-          <Upload {...props}>
+          <Upload {...DropperProps}>
             <Button>
               <Icon type="upload" /> Select File
             </Button>
