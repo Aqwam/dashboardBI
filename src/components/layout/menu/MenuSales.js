@@ -1,13 +1,12 @@
 import { Menu, Icon } from "antd";
 
-import React from //Component
-"react";
+import React from "react"; //Component
 import { Link } from "react-router-dom";
 
 const MenuSales = () => {
   return (
     <React.Fragment>
-      <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
+      <Menu theme="light" mode="inline" defaultSelectedKeys={["1"]}>
         <Menu.Item key="1">
           <Link to="/">
             <Icon type="appstore" />

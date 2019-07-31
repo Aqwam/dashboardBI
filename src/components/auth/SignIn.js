@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Form, Icon, message, Input, Button, Card } from "antd";
-import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { signIn } from "../../redux/actions/authActions";
 
 class SignInForm extends Component {
   constructor(props) {

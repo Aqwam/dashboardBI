@@ -16,7 +16,7 @@ class Dashboard extends Component {
   render() {
     return (
       <React.Fragment>
-        <div>halo</div>
+        <Salesboard />
       </React.Fragment>
     );
   }

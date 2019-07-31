@@ -28,6 +28,7 @@ class Sidebar extends Component {
           trigger={null}
           collapsible
           collapsed={this.props.collapsed}
+          theme="light"
           style={{
             height: "100vh",
             position: "fixed",
@@ -35,7 +36,7 @@ class Sidebar extends Component {
             left: 0
           }}
         >
-          <Menu theme="dark">
+          <Menu theme="light">
             <li
               className="ant-menu-item div-logo"
               role="menuitem"
@@ -46,16 +47,6 @@ class Sidebar extends Component {
             {links(profile)}
           </Menu>
         </Sider>
-        <Sider
-          collapsedWidth="0"
-          trigger={null}
-          collapsible
-          collapsed={this.props.collapsed}
-          style={{
-            height: "100vh",
-            zIndex: -1
-          }}
-        />
       </React.Fragment>
     );
   }

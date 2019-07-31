@@ -14,7 +14,7 @@ class Navbar extends Component {
   state = {};
   hiddenNav = (collapsed, auth) => {
     const isCollapsed = this.props.isCollapsed;
-    const logoBut = auth.uid ? isCollapsed : null;
+    const logoBut = isCollapsed;
     if (collapsed) {
       return (
         <ul
@@ -40,7 +40,7 @@ class Navbar extends Component {
         </ul>
       );
     }
-    if (!collapsed && !auth.uid) {
+    if (!collapsed) {
       return (
         <ul
           className=" ant-menu ant-menu-light ant-menu-root ant-menu-horizontal"
