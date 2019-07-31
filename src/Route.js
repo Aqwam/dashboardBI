@@ -41,7 +41,7 @@ class Routes extends Component {
           exact
           path="/ETLCard"
           render={props => {
-            return <EtlCard auth={auth} profile={profile} {...props} />;
+            return <EtlCard />;
           }}
         />
 
@@ -49,14 +49,14 @@ class Routes extends Component {
           exact
           path="/login"
           render={props => {
-            return <SignIn auth={auth} {...props} />;
+            return <SignIn {...props} />;
           }}
         />
         <Route
           exact
           path="/register"
           render={props => {
-            return <SignUp auth={auth} profile={profile} {...props} />;
+            return <SignUp {...props} />;
           }}
         />
       </Switch>

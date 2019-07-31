@@ -4,7 +4,7 @@ import {
   Menu
   // Icon
 } from "antd";
-import MenuSales from "./menu/MenuSales";
+import MenuSidebar from "./menu/MenuSidebar";
 import logo from "../../assets/img/mogobi.png";
 import { connect } from "react-redux";
 const { Sider } = Layout;
@@ -14,7 +14,7 @@ class Sidebar extends Component {
     const { isCollapsed } = this.props;
     const { profile } = this.props;
     const links = profile => {
-      return <MenuSales />;
+      return <MenuSidebar />;
     };
     return (
       <React.Fragment>

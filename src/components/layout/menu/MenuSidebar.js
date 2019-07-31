@@ -3,7 +3,7 @@ import { Menu, Icon } from "antd";
 import React from "react"; //Component
 import { Link } from "react-router-dom";
 const SubMenu = Menu.SubMenu;
-const MenuSales = () => {
+const MenuSidebar = () => {
   return (
     <React.Fragment>
       <Menu theme="light" mode="inline" defaultSelectedKeys={["1"]}>
@@ -27,4 +27,4 @@ const MenuSales = () => {
     </React.Fragment>
   );
 };
-export default MenuSales;
+export default MenuSidebar;
