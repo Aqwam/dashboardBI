@@ -5,6 +5,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import EtlCard from "./components/dashboard/dashchild/tabs/component/EtlCard";
+import Absensi from "./components/dashboard/Absensi";
 
 class Routes extends Component {
   constructor(props) {
@@ -21,6 +22,13 @@ class Routes extends Component {
           path="/"
           render={props => {
             return <Dashboard auth={auth} profile={profile} {...props} />;
+          }}
+        />
+        <Route
+          exact
+          path="/absensi"
+          render={props => {
+            return <Absensi auth={auth} profile={profile} {...props} />;
           }}
         />
         <Route

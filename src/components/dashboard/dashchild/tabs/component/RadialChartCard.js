@@ -141,53 +141,8 @@ class RadialChartCard extends Component {
       return 0;
     });
 
-    const valuePeriod =
-      counterPassed === "alltime" ? (
-        ""
-      ) : counterPassed === "yearly" ? (
-        <Select
-          defaultValue="-"
-          style={{ width: 120 }}
-          onChange={this.handleChange.bind(this, counterPassed)}
-        >
-          {/* ini diisi sama mapping seluruh tahun */}
-
-          <Option value="2019">2019</Option>
-        </Select>
-      ) : counterPassed === "monthly" ? (
-        <MonthPicker onChange={this.handleChange.bind(this, counterPassed)} />
-      ) : counterPassed === "weekly" ? (
-        <WeekPicker onChange={this.handleChange.bind(this, counterPassed)} />
-      ) : counterPassed === "byRange" ? (
-        <RangePicker onChange={this.handleChange.bind(this, counterPassed)} />
-      ) : (
-        ""
-      );
     return (
       <React.Fragment>
-        <Row style={{ marginBottom: "10%" }}>
-          <Select
-            onChange={this.handleOption.bind(this)}
-            defaultValue="All Periode"
-            style={{
-              width: 120,
-              marginBottom: "5%"
-            }}
-            className="content-right"
-          >
-            <Option value="alltime">All Periode</Option>
-            <Option value="yearly">Yearly</Option>
-            <Option value="monthly">Monthly</Option>
-            <Option value="weekly">Weekly</Option>
-            <Option value="byRange">By range</Option>
-          </Select>
-          <br />
-          <div className="content-right" style={{ marginTop: "3%" }}>
-            {" "}
-            {valuePeriod}
-          </div>
-          <br />
-        </Row>
         <Row>
           <Col>
             {" "}
