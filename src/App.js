@@ -29,68 +29,44 @@ class App extends Component {
   }
 
   render() {
-    const { auth, notifications, profile, products, employees } = this.props;
-    const links = auth.uid ? (
+    const links = (
       <Sidebar
         isCollapsed={this.handleCollapse}
         collapsed={this.state.collapsed}
-        auth={auth}
       />
-    ) : (
-      ""
     );
-    if (notifications) {
-      return (
-        <React.Fragment>
-          <BrowserRouter>
-            <div>
-              {" "}
-              <Layout style={{ minHeight: "100vh" }}>
-                {links}
-                <Layout>
-                  <Navbar
-                    isCollapsed={this.handleCollapse}
-                    collapsed={this.state.collapsed}
-                    notifications={notifications}
-                    auth={auth}
-                    profile={profile}
-                  />
-                  <Content
-                    style={{
-                      margin: "24px 16px",
-                      marginTop: 70,
-                      minHeight: 280
-                    }}
-                  >
-                    <Routes
-                      profile={profile}
-                      products={products}
-                      employees={employees}
-                      auth={auth}
-                    />
-                  </Content>
-                </Layout>
+    return (
+      <React.Fragment>
+        <BrowserRouter>
+          <div>
+            {" "}
+            <Layout style={{ minHeight: "100vh" }}>
+              {links}
+              <Layout>
+                <Navbar
+                  isCollapsed={this.handleCollapse}
+                  collapsed={this.state.collapsed}
+                />
+                <Content
+                  style={{
+                    margin: "24px 16px",
+                    marginTop: 70,
+                    minHeight: 280
+                  }}
+                >
+                  <Routes />
+                </Content>
               </Layout>
-            </div>
-          </BrowserRouter>
-        </React.Fragment>
-      );
-    } else {
-      return (
-        <div>
-          <Icon type="loading" className="splash-loading" />
-        </div>
-      );
-    }
+            </Layout>
+          </div>
+        </BrowserRouter>
+      </React.Fragment>
+    );
   }
 }
 
 const mapStateToProps = state => {
-  return {
-    auth: state.firebase.auth,
-    notifications: state.firestore.ordered.notifications,
-    profile: state.firebase.profile
-  };
+  return {};
 };
 
 const mapDispatchToProps = dispatch => {
@@ -102,7 +78,5 @@ export default compose(
     mapStateToProps,
     mapDispatchToProps
   ),
-  firestoreConnect([
-    { collection: "notifications", limit: 3, orderBy: ["time", "desc"] }
-  ])
+  firestoreConnect([])
 )(App);

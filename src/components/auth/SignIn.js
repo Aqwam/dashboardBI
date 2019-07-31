@@ -43,8 +43,6 @@ class SignInForm extends Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    const { auth, authError } = this.props;
-    if (auth.uid) return <Redirect to="/" />;
     return (
       <React.Fragment>
         <div
@@ -119,9 +117,7 @@ class SignInForm extends Component {
                 </Button>
                 Or <a href="/register">register now!</a>
               </Form.Item>
-              <div className="text-center" style={{ color: "red" }}>
-                {authError}
-              </div>
+              <div className="text-center" style={{ color: "red" }} />
             </Form>
           </Card>
         </div>
@@ -130,15 +126,11 @@ class SignInForm extends Component {
   }
 }
 const mapDispatchToProps = dispatch => {
-  return {
-    signIn: creds => dispatch(signIn(creds))
-  };
+  return {};
 };
 
 const mapStateToProps = state => {
-  return {
-    authError: state.auth.authError
-  };
+  return {};
 };
 const SignIn = Form.create()(SignInForm);
 export default connect(
