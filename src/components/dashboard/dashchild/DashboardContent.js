@@ -3,7 +3,7 @@ import { Col, Card, Row } from "antd";
 // import Profits from "../statistic/Profits";
 // import Incomes from "../statistic/Incomes";
 
-class Managerboard extends Component {
+class DashboardContent extends Component {
   state = {};
   render() {
     return (
@@ -22,4 +22,4 @@ class Managerboard extends Component {
   }
 }
 
-export default Managerboard;
+export default DashboardContent;

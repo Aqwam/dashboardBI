@@ -8,20 +8,13 @@ import { compose } from "redux";
 
 const SignedInLinks = props => {
   const notifications = props.notifications;
-  const hehe = props => (
-    <Menu theme="light">
-      <Menu.Item>
-        <Link to="/">Profile</Link>
-      </Menu.Item>
-    </Menu>
-  );
   return (
     <ul
       className=" ant-menu ant-menu-light ant-menu-root ant-menu-horizontal"
       style={{ lineHeight: "56px", position: "fixed", right: 0 }}
       role="menu"
     >
-      <li className="ant-menu-item " role="menuitem" color="light">
+      <li className="ant-menu-item" role="menuitem" color="light">
         <Menu>
           <Menu.Item>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

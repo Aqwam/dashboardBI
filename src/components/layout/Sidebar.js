@@ -4,8 +4,6 @@ import {
   Menu
   // Icon
 } from "antd";
-import MenuManager from "./menu/MenuManager";
-import MenuWarehouse from "./menu/MenuWarehouse";
 import MenuSales from "./menu/MenuSales";
 import logo from "../../assets/img/mogobi.png";
 import { connect } from "react-redux";
@@ -16,8 +14,6 @@ class Sidebar extends Component {
     const { isCollapsed } = this.props;
     const { profile } = this.props;
     const links = profile => {
-      if (profile.role === "owner") return <MenuManager />;
-      if (profile.role === "warehouse") return <MenuWarehouse />;
       return <MenuSales />;
     };
     return (

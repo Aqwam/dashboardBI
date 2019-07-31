@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 // import { Row, Col, Card } from "antd";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
 
-import Managerboard from "./dashchild/Managerboard";
-import Warehouseboard from "./dashchild/Warehouseboard";
-import Salesboard from "./dashchild/Salesboard";
+import DashboardContent from "./dashchild/DashboardContent";
 
 // import Incomes from "./statistic/Incomes";
 // import Profits from "./statistic/Profits";
@@ -16,7 +13,7 @@ class Dashboard extends Component {
   render() {
     return (
       <React.Fragment>
-        <Salesboard />
+        <DashboardContent />
       </React.Fragment>
     );
   }
