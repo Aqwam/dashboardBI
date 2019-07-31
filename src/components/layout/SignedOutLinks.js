@@ -5,7 +5,7 @@ const SignedOutLinks = () => {
   return (
     <React.Fragment>
       <ul
-        className=" ant-menu ant-menu-dark ant-menu-root ant-menu-horizontal"
+        className=" ant-menu ant-menu-light ant-menu-root ant-menu-horizontal"
         style={{ lineHeight: "56px", position: "fixed", right: 0 }}
         role="menu"
       >

@@ -9,7 +9,7 @@ import { compose } from "redux";
 const SignedInLinks = props => {
   const notifications = props.notifications;
   const hehe = props => (
-    <Menu theme="dark">
+    <Menu theme="light">
       <Menu.Item>
         <Link to="/">Profile</Link>
       </Menu.Item>
@@ -22,11 +22,11 @@ const SignedInLinks = props => {
   );
   return (
     <ul
-      className=" ant-menu ant-menu-dark ant-menu-root ant-menu-horizontal"
+      className=" ant-menu ant-menu-light ant-menu-root ant-menu-horizontal"
       style={{ lineHeight: "56px", position: "fixed", right: 0 }}
       role="menu"
     >
-      <li className="ant-menu-item " role="menuitem" color="dark">
+      <li className="ant-menu-item " role="menuitem" color="light">
         <Dropdown overlay={Notifications(notifications)}>
           <a className="ant-dropdown-link" href="/playground">
             {/* <Badge dot> */}
@@ -37,7 +37,7 @@ const SignedInLinks = props => {
         </Dropdown>
       </li>
 
-      <li className="ant-menu-item " role="menuitem" color="dark">
+      <li className="ant-menu-item " role="menuitem" color="light">
         <Dropdown overlay={hehe(props)}>
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a className="ant-dropdown-link" href="#">

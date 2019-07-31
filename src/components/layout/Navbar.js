@@ -7,7 +7,7 @@ import {
 import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
 import { connect } from "react-redux";
-import logo from "../../assets/img/mogobi.png";
+import logo from "../../assets/img/LogoDashboard.png";
 const { Header } = Layout;
 
 class Navbar extends Component {
@@ -18,7 +18,7 @@ class Navbar extends Component {
     if (collapsed) {
       return (
         <ul
-          className=" ant-menu ant-menu-dark ant-menu-root ant-menu-horizontal"
+          className=" ant-menu ant-menu-light ant-menu-root ant-menu-horizontal"
           style={{
             lineHeight: "56px",
             position: "fixed",
@@ -43,7 +43,7 @@ class Navbar extends Component {
     if (!collapsed && !auth.uid) {
       return (
         <ul
-          className=" ant-menu ant-menu-dark ant-menu-root ant-menu-horizontal"
+          className=" ant-menu ant-menu-light ant-menu-root ant-menu-horizontal"
           style={{
             lineHeight: "56px",
             position: "fixed",
@@ -78,7 +78,7 @@ class Navbar extends Component {
       <React.Fragment>
         <Header
           style={{
-            background: "#001529",
+            background: "#ffffff",
             width: "100%",
             height: 56,
             zIndex: 1,
