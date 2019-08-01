@@ -5,7 +5,7 @@ import {
   // Icon
 } from "antd";
 import MenuSidebar from "./menu/MenuSidebar";
-import logo from "../../assets/img/mogobi.png";
+import logo from "../../assets/img/LogoDashboard.png";
 import { connect } from "react-redux";
 const { Sider } = Layout;
 

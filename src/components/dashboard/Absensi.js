@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Col, Card, Row } from "antd";
+import { Redirect } from "react-router-dom";
 // import Profits from "../statistic/Profits";
 // import Incomes from "../statistic/Incomes";
 
@@ -8,6 +9,12 @@ import RadialChartCard from "./dashchild/tabs/component/RadialChartCard";
 class Absensi extends Component {
   state = {};
   render() {
+    const { auth } = this.props;
+
+    if (!auth.uid) {
+      return <Redirect to="/login" />;
+    }
+
     return (
       <Fragment>
         <div className="gutter-example">

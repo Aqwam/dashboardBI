@@ -14,7 +14,7 @@ class Navbar extends Component {
   state = {};
   hiddenNav = (collapsed, auth) => {
     const isCollapsed = this.props.isCollapsed;
-    const logoBut = isCollapsed;
+    const logoBut = auth.uid ? isCollapsed : null;
     if (collapsed) {
       return (
         <ul
@@ -40,7 +40,7 @@ class Navbar extends Component {
         </ul>
       );
     }
-    if (!collapsed) {
+    if (!collapsed && !auth.uid) {
       return (
         <ul
           className=" ant-menu ant-menu-light ant-menu-root ant-menu-horizontal"
@@ -64,13 +64,21 @@ class Navbar extends Component {
     }
   };
   render() {
-    const { auth, collapsed } = this.props;
-    const links = !auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
+    const { auth, collapsed, profile, notifications } = this.props;
+    const links = auth.uid ? (
+      <SignedInLinks
+        profile={profile}
+        auth={auth}
+        notifications={notifications}
+      />
+    ) : (
+      <SignedOutLinks />
+    );
     return (
       <React.Fragment>
         <Header
           style={{
-            background: "#ffffff",
+            background: "white",
             width: "100%",
             height: 56,
             zIndex: 1,

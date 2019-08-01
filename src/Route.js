@@ -14,34 +14,35 @@ class Routes extends Component {
     this.state = {};
   }
   render() {
+    const { auth } = this.props;
     return (
       <Switch>
         <Route
           exact
           path="/"
           render={props => {
-            return <Dashboard {...props} />;
+            return <Dashboard auth={auth} {...props} />;
           }}
         />
         <Route
           exact
           path="/absensi"
           render={props => {
-            return <Absensi {...props} />;
+            return <Absensi auth={auth} {...props} />;
           }}
         />
         <Route
           exact
           path="/demografi"
           render={props => {
-            return <DashboardContent />;
+            return <DashboardContent auth={auth} />;
           }}
         />
         <Route
           exact
           path="/ETLCard"
           render={props => {
-            return <EtlCard />;
+            return <EtlCard auth={auth} />;
           }}
         />
 
@@ -49,7 +50,7 @@ class Routes extends Component {
           exact
           path="/login"
           render={props => {
-            return <SignIn {...props} />;
+            return <SignIn auth={auth} {...props} />;
           }}
         />
         <Route

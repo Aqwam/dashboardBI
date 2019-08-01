@@ -4,10 +4,16 @@ import { Col, Card, Row } from "antd";
 // import Incomes from "../statistic/Incomes";
 import DropperToCsv from "./tabs/component/DropperToCsv";
 import RadialChartCard from "./tabs/component/RadialChartCard";
-
+import { Redirect } from "react-router-dom";
 class DashboardContent extends Component {
   state = {};
   render() {
+    const { auth } = this.props;
+
+    if (!auth.uid) {
+      return <Redirect to="/login" />;
+    }
+
     return (
       <Fragment>
         <div className="gutter-example">

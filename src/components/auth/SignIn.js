@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Form, Icon, message, Input, Button, Card } from "antd";
 import { connect } from "react-redux";
 import { signIn } from "../../redux/actions/authActions";
+import { Redirect } from "react-router-dom";
 
 class SignInForm extends Component {
   constructor(props) {
@@ -21,10 +22,6 @@ class SignInForm extends Component {
   //     }
   // }
 
-  error(authError) {
-    message.error(authError);
-  }
-
   handleChange = e => {
     this.setState({
       [e.target.id]: e.target.value
@@ -39,10 +36,23 @@ class SignInForm extends Component {
       }
     });
   };
+  testCheck = () => {
+    message.error("Email atau Password Salah !");
+  };
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    const { signIn } = this.props;
+    const { auth, authError } = this.props;
+    const links =
+      authError !== null ? (
+        <span style={{ color: "red " }}>Email Atau Password Salah !</span>
+      ) : (
+        ""
+      );
+    if (auth.uid) {
+      return <Redirect to="/" />;
+    }
+
     return (
       <React.Fragment>
         <div
@@ -104,6 +114,7 @@ class SignInForm extends Component {
                   />
                 )}
               </Form.Item>
+              {links}
               <Form.Item>
                 <Button
                   type="primary"
@@ -112,7 +123,6 @@ class SignInForm extends Component {
                 >
                   Log in
                 </Button>
-                Or <a href="/register">register now!</a>
               </Form.Item>
               <div className="text-center" style={{ color: "red" }} />
             </Form>
@@ -129,7 +139,9 @@ const mapDispatchToProps = dispatch => {
 };
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    authError: state.auth.authError
+  };
 };
 const SignIn = Form.create()(SignInForm);
 export default connect(

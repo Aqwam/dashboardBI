@@ -29,11 +29,15 @@ class App extends Component {
   }
 
   render() {
-    const links = (
+    const { auth } = this.props;
+    const links = auth.uid ? (
       <Sidebar
         isCollapsed={this.handleCollapse}
         collapsed={this.state.collapsed}
+        auth={auth}
       />
+    ) : (
+      ""
     );
     return (
       <React.Fragment>
@@ -46,6 +50,7 @@ class App extends Component {
                 <Navbar
                   isCollapsed={this.handleCollapse}
                   collapsed={this.state.collapsed}
+                  auth={auth}
                 />
                 <Content
                   style={{
@@ -54,7 +59,7 @@ class App extends Component {
                     minHeight: 280
                   }}
                 >
-                  <Routes />
+                  <Routes auth={auth} />
                 </Content>
               </Layout>
             </Layout>
@@ -66,7 +71,9 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    auth: state.firebase.auth
+  };
 };
 
 const mapDispatchToProps = dispatch => {
