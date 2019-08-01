@@ -31,14 +31,14 @@ class SignInForm extends Component {
     });
   };
   x;
-  handleSubmit(e) {
+  handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
         this.props.signIn(values);
       }
     });
-  }
+  };
 
   render() {
     const { getFieldDecorator } = this.props.form;
@@ -58,10 +58,7 @@ class SignInForm extends Component {
             className="mr-auto ml-auto mt-10"
             style={{ width: 300 }}
           >
-            <Form
-              onSubmit={this.handleSubmit.bind(this)}
-              className="login-form"
-            >
+            <Form onSubmit={this.handleSubmit} className="login-form">
               <Form.Item>
                 {getFieldDecorator("email", {
                   rules: [
@@ -112,7 +109,6 @@ class SignInForm extends Component {
                   type="primary"
                   htmlType="submit"
                   className="login-form-button"
-                  onClick={this.handleSubmit}
                 >
                   Log in
                 </Button>
