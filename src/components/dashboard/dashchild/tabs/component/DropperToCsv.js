@@ -3,6 +3,9 @@ import React, { Component } from "react";
 import { Upload, Icon, message, Button, Progress } from "antd";
 import firebase from "../../../../../config/fbConfig";
 import csv from "csv";
+import { connect } from "react-redux";
+import { importData } from "../../../../../redux/actions/etlActions";
+
 class DropperToCsv extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +13,7 @@ class DropperToCsv extends Component {
       fileList: [],
       uploading: false,
       progressVal: 0,
-      counterData: ""
+      counterData: null
     };
   }
 
@@ -24,7 +27,6 @@ class DropperToCsv extends Component {
       formData.append("files[]", file);
     });
 
-    console.log(fileList);
     this.setState({
       uploading: true
     });
@@ -57,7 +59,18 @@ class DropperToCsv extends Component {
   checkLog = () => {
     console.log(this.state.counterData);
   };
+  checkMap = () => {
+    this.state.counterData.map(item => {
+      console.log(item);
+      return 0;
+    });
+  };
 
+  processData = () => {
+    if (this.state.counterData !== null) {
+      this.props.importData(this.state.counterData);
+    }
+  };
   render() {
     const { fileList, uploading, progressVal } = this.state;
     let counterProgress = Number(
@@ -76,7 +89,7 @@ class DropperToCsv extends Component {
         });
       },
       beforeUpload: async file => {
-        let pivot = [];
+        // let pivot = [];
         const isCSV =
           file.type === "application/vnd.ms-excel" ||
           file.name.slice(-3) === "csv";
@@ -90,7 +103,18 @@ class DropperToCsv extends Component {
               reader.result,
               async (err, data) => {
                 let wadah = [];
-                data.map(item => wadah.push(item));
+                data.map(item =>
+                  wadah.push({
+                    nik: item[0],
+                    nama: item[1],
+                    umur: item[2],
+                    jk: item[3],
+                    pendidikan: item[4],
+                    jabatan: item[5],
+                    tahunMasuk: item[6],
+                    tahunPensiun: item[7]
+                  })
+                );
                 await (wadah.shift(), this.setState({ counterData: wadah }));
               },
               { comment: "ï»¿", delimiter: ";" }
@@ -115,20 +139,26 @@ class DropperToCsv extends Component {
               <Icon type="upload" /> Select File
             </Button>
           </Upload>
-          {links}
-          <Button
-            type="primary"
-            onClick={this.handleUpload.bind(this)}
-            disabled={fileList.length === 0}
-            loading={uploading}
-            style={{ marginTop: 16 }}
-          >
-            {uploading ? "Uploading" : "Start Upload"}
-          </Button>
         </div>
+        <Button disabled={fileList.length === 0} onClick={this.processData}>
+          Proses CSV
+        </Button>
       </React.Fragment>
     );
   }
 }
 
-export default DropperToCsv;
+const mapStateToProps = state => {
+  return { importedData: state.etl.importedData };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    importData: data => dispatch(importData(data))
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DropperToCsv);

@@ -145,8 +145,10 @@ class EtlCard extends Component {
             subTotal: item.prices
           };
           etlFactSales(data);
+          return 0;
         });
       }
+      return 0;
     });
     await setTimeout(() => {
       this.props.history.push("/");

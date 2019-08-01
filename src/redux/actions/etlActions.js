@@ -1,3 +1,9 @@
+export const importData = data => {
+  return dispatch => {
+    dispatch({ type: "IMPORT_NEW_DATA", data: data });
+  };
+};
+
 export const etlDimProducts = data => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();

@@ -1,12 +1,24 @@
-const initState = {};
+const initState = { importedData: null };
 
 const etlReducer = (state = initState, action) => {
   switch (action.type) {
+    case "IMPORT_NEW_DATA": {
+      console.log("Import Data Success");
+      return {
+        ...state,
+        importedData: action.data
+      };
+    }
+    case "IMPORT_DATA_FAIL": {
+      console.log("Import data error", action.err);
+      return state;
+    }
     case "ADD_NEW_DIM_PRODUCT":
       return state;
-    case "ADD_NEW_DIM_PRODUCT_ERROR":
+    case "ADD_NEW_DIM_PRODUCT_ERROR": {
       console.log("Error adding new data", action.err);
       return state;
+    }
     case "ADD_NEW_DIM_DISTRIBUTORS":
       return state;
     case "ADD_NEW_DIM_DISTRIBUTORS_ERROR":
