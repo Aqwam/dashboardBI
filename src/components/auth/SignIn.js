@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Form, Icon, message, Input, Button, Card } from "antd";
 import { connect } from "react-redux";
+import { signIn } from "../../redux/actions/authActions";
 
 class SignInForm extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class SignInForm extends Component {
     });
   };
   x;
-  async handleSubmit(e) {
+  handleSubmit(e) {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
@@ -41,6 +42,7 @@ class SignInForm extends Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
+    const { signIn } = this.props;
     return (
       <React.Fragment>
         <div
@@ -110,6 +112,7 @@ class SignInForm extends Component {
                   type="primary"
                   htmlType="submit"
                   className="login-form-button"
+                  onClick={this.handleSubmit}
                 >
                   Log in
                 </Button>
@@ -124,7 +127,9 @@ class SignInForm extends Component {
   }
 }
 const mapDispatchToProps = dispatch => {
-  return {};
+  return {
+    signIn: credential => dispatch(signIn(credential))
+  };
 };
 
 const mapStateToProps = state => {
