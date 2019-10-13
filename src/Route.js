@@ -3,10 +3,9 @@ import { Route, Switch } from "react-router-dom";
 
 import Dashboard from "./components/dashboard/Dashboard";
 import SignIn from "./components/auth/SignIn";
-import SignUp from "./components/auth/SignUp";
-import EtlCard from "./components/dashboard/dashchild/tabs/component/EtlCard";
-import Absensi from "./components/dashboard/Absensi";
-import DashboardContent from "./components/dashboard/dashchild/DashboardContent";
+import TrendParticles from "./components/dashboard/dashchild/TrendParticle";
+import TrendMikrobiologi from "./components/dashboard/dashchild/TrendMikrobiologi";
+import KeyPerformaceIndicator from "./components/dashboard/dashchild/KeyPerformaceIndicator";
 
 class Routes extends Component {
   constructor(props) {
@@ -26,38 +25,30 @@ class Routes extends Component {
         />
         <Route
           exact
-          path="/absensi"
+          path="/trendParticles"
           render={props => {
-            return <Absensi auth={auth} {...props} />;
+            return <TrendParticles auth={auth} {...props} />;
           }}
         />
         <Route
           exact
-          path="/demografi"
+          path="/trendMikrobiologi"
           render={props => {
-            return <DashboardContent auth={auth} />;
+            return <TrendMikrobiologi auth={auth} />;
           }}
         />
         <Route
           exact
-          path="/ETLCard"
+          path="/keyPerformanceIndicator"
           render={props => {
-            return <EtlCard auth={auth} />;
+            return <KeyPerformaceIndicator auth={auth} />;
           }}
         />
-
         <Route
           exact
           path="/login"
           render={props => {
             return <SignIn auth={auth} {...props} />;
-          }}
-        />
-        <Route
-          exact
-          path="/register"
-          render={props => {
-            return <SignUp {...props} />;
           }}
         />
       </Switch>

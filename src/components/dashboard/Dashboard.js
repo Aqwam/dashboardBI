@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Input } from "antd";
+import { Input, Card } from "antd";
 import { Redirect } from "react-router-dom";
 
 class Dashboard extends Component {
@@ -26,9 +26,7 @@ class Dashboard extends Component {
     }
     return (
       <React.Fragment>
-        <form onSubmit={this.handleSubmit} className="white">
-          <Input placeholder="nama" id="nama" onChange={this.handleChange} />
-        </form>
+        <Card>dashbord ini merupakan </Card>
       </React.Fragment>
     );
   }

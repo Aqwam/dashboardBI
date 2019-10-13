@@ -16,11 +16,14 @@ const MenuSidebar = () => {
             </span>
           }
         >
-          <Menu.Item key="demografi">
-            <Link to="/demografi">Demografi</Link>
+          <Menu.Item key="TrendParticle">
+            <Link to="/TrendParticles">Trend EM Partikel</Link>
           </Menu.Item>
-          <Menu.Item key="absensi">
-            <Link to="/absensi">Absensi</Link>
+          <Menu.Item key="TrendMikrobiologi">
+            <Link to="/TrendMikrobiologi">Trend EM Mikrobiologi</Link>
+          </Menu.Item>
+          <Menu.Item key="KeyPerformanceIndicator">
+            <Link to="/KeyPerformanceIndicator">Key Performance Indicator</Link>
           </Menu.Item>
         </SubMenu>
       </Menu>

@@ -41,6 +41,7 @@ class DropperToCsv extends Component {
             console.log(error);
           },
           () => {
+            console.log("Counter : ", counterProgress);
             counterProgress = counterProgress + 1;
             this.setState({ progressVal: counterProgress });
             if (counterProgress === fileList.length) {
@@ -71,6 +72,7 @@ class DropperToCsv extends Component {
       this.props.importData(this.state.counterData);
     }
   };
+
   render() {
     const { fileList, uploading, progressVal } = this.state;
     let counterProgress = Number(
@@ -82,7 +84,7 @@ class DropperToCsv extends Component {
         this.setState(state => {
           const index = state.fileList.indexOf(file);
           const newFileList = state.fileList.slice();
-          newFileList.splice(index, 1);
+          newFileList.slice(index, 1);
           return {
             fileList: newFileList
           };

@@ -1,12 +1,10 @@
 import React, { Component, Fragment } from "react";
 import { Col, Card, Row, Button } from "antd";
-// import Profits from "../statistic/Profits";
-// import Incomes from "../statistic/Incomes";
 import DropperToCsv from "./tabs/component/DropperToCsv";
 import RadialChartCard from "./tabs/component/RadialChartCard";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-class DashboardContent extends Component {
+class TrendMikrobiologi extends Component {
   state = {};
 
   render() {
@@ -35,22 +33,26 @@ class DashboardContent extends Component {
                   <Card title="Welcome">
                     <div className="gutter-example">
                       <Row gutter={1}>
-                        <Col className="gutter-row" sm={24} md={12}>
-                          <Card title="Demografi Jenis Kelamin">
-                            <RadialChartCard
-                              type="demografiJK"
-                              data={importedData}
-                            />
+                        <Col className="gutter-row">
+                          <Card title="Trend Environment Monitoring Microbiology">
+                            {importedData ? (
+                              <RadialChartCard
+                                type="trendMikrobiology"
+                                data={importedData}
+                              />
+                            ) : (
+                              <div />
+                            )}
                           </Card>
                         </Col>
-                        <Col className="gutter-row" sm={24} md={12}>
+                        {/* <Col className="gutter-row" sm={24} md={12}>
                           <Card title="Demografi Pendidikan">
                             <RadialChartCard
                               type="demografiPendidikan"
                               data={importedData}
                             />
                           </Card>
-                        </Col>
+                        </Col> */}
                       </Row>
                     </div>
                   </Card>
@@ -68,4 +70,4 @@ const mapStateToProps = state => {
   return { importedData: state.etl.importedData };
 };
 
-export default connect(mapStateToProps)(DashboardContent);
+export default connect(mapStateToProps)(TrendMikrobiologi);

@@ -12,7 +12,7 @@ class RadialChartCard extends Component {
   }
   componentDidMount() {
     const { type, data } = this.props;
-    if (type === "demografiJK") {
+    if (type === "trendParticle") {
       let unique = [...new Set(data.map(item => item.jk))].sort(); //ini buat ngeklasifikasiin jenis
       for (let i = 0; i < unique.length; i++) {
         let counter = 0;
