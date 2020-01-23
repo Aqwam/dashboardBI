@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Col, Card, Row, Button } from "antd";
 import DropperToCsv from "./tabs/component/DropperToCsv";
-import RadialChartCard from "./tabs/component/RadialChartCard";
+import ChartTrendParticle from "./tabs/component/Chart Trend Particle";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 class TrendParticle extends Component {
@@ -17,7 +17,7 @@ class TrendParticle extends Component {
           <React.Fragment>
             <Row gutter={1}>
               <Col className="gutter-row">
-                <Card title="Masukkan data yang akan di olah">
+                <Card title="Import data to be processed">
                   <DropperToCsv />
                 </Card>
               </Col>
@@ -30,29 +30,17 @@ class TrendParticle extends Component {
             <div className="gutter-example">
               <Row gutter={1}>
                 <Col className="gutter-row">
-                  <Card title="Welcome">
+                  <Card title="Graphic Display of Environment Monitoring Production Division at PT Bio Farma">
                     <div className="gutter-example">
                       <Row gutter={1}>
                         <Col className="gutter-row">
                           <Card title="Trend Environment Monitoring Particle">
-                            {importedData ? (
-                              <RadialChartCard
-                                type="trendParticle"
-                                data={importedData}
-                              />
-                            ) : (
-                              <div />
-                            )}
+                            <ChartTrendParticle type="trendParticle" />
+                          </Card>
+                          <Card title="                            ">
+                            <ChartTrendParticle type="trendParticle" />
                           </Card>
                         </Col>
-                        {/* <Col className="gutter-row" sm={24} md={12}>
-                          <Card title="Demografi Pendidikan">
-                            <RadialChartCard
-                              type="demografiPendidikan"
-                              data={importedData}
-                            />
-                          </Card>
-                        </Col> */}
                       </Row>
                     </div>
                   </Card>

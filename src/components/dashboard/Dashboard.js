@@ -25,9 +25,10 @@ class Dashboard extends Component {
       return <Redirect to="/login" />;
     }
     return (
-      <React.Fragment>
-        <Card>dashbord ini merupakan </Card>
-      </React.Fragment>
+      // <React.Fragment>
+      //   <Card>dashbord ini merupakan </Card>
+      // </React.Fragment>
+      null
     );
   }
 }

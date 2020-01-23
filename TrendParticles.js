@@ -18,7 +18,7 @@ class TrendParticles extends Component {
         <div className="gutter-example">
           <Row gutter={1}>
             <Col className="gutter-row">
-              <Card title="Welcome">
+              <Card title="Tampilan Grafik Environment Monitoring Bagian Produksi PT Biofarma">
                 <div className="gutter-example">
                   <Row gutter={1}>
                     <Col className="gutter-row" sm={24} md={12}>
