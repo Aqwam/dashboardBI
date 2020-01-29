@@ -37,9 +37,7 @@ class TrendMikrobiologi extends Component {
                           <Card title="Trend Environment Monitoring Particle">
                             <ChartTrendMicrobiology type="trendMicrobiology" />
                           </Card>
-                          <Card title="                            ">
-                            <ChartTrendMicrobiology type="trendMicrobiology" />
-                          </Card>
+                          <Card title="                            "></Card>
                         </Col>
                       </Row>
                     </div>

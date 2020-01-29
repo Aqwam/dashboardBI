@@ -22,7 +22,9 @@ class ChartTrendParticle extends Component {
       theme: "light2",
       animationEnabled: true,
       title: {
-        text: "Trend EM Particle "
+        text:
+          'Trend EM Particle Count Class B P-318 I-10, P-318, PC 0.5 µm "Bagian Produksi Vaksin Rotavirus"',
+        fontSize: 20
       },
       axisX: {
         title: "Date"
@@ -50,18 +52,15 @@ class ChartTrendParticle extends Component {
           xValueFormatString: "MMM YYYY",
           yValueFormatString: "#,##0 ",
           dataPoints: [
-            { x: new Date(2017, 0, 1), y: 19034.5 },
-            { x: new Date(2017, 1, 1), y: 20015 },
-            { x: new Date(2017, 2, 1), y: 27342 },
-            { x: new Date(2017, 3, 1), y: 20088 },
-            { x: new Date(2017, 4, 1), y: 20234 },
-            { x: new Date(2017, 5, 1), y: 29034 },
-            { x: new Date(2017, 6, 1), y: 30487 },
-            { x: new Date(2017, 7, 1), y: 32523 },
-            { x: new Date(2017, 8, 1), y: 20234 },
-            { x: new Date(2017, 9, 1), y: 27234 },
-            { x: new Date(2017, 10, 1), y: 33548 },
-            { x: new Date(2017, 11, 1), y: 32534 }
+            { x: new Date(2017, 10, 4), y: 121000 },
+            { x: new Date(2017, 10, 6), y: 121000 },
+            { x: new Date(2017, 10, 8), y: 121000 },
+            { x: new Date(2017, 10, 10), y: 121000 },
+            { x: new Date(2017, 10, 12), y: 121000 },
+            { x: new Date(2017, 10, 14), y: 121000 },
+            { x: new Date(2017, 10, 16), y: 121000 },
+            { x: new Date(2017, 10, 18), y: 121000 },
+            { x: new Date(2017, 10, 20), y: 121000 }
           ]
         },
         {
@@ -71,18 +70,15 @@ class ChartTrendParticle extends Component {
           xValueFormatString: "MMM YYYY",
           yValueFormatString: "#,##0",
           dataPoints: [
-            { x: new Date(2017, 0, 1), y: 10000.55 },
-            { x: new Date(2017, 1, 1), y: 10000.55 },
-            { x: new Date(2017, 2, 1), y: 10000.55 },
-            { x: new Date(2017, 3, 1), y: 10000.55 },
-            { x: new Date(2017, 4, 1), y: 10000.55 },
-            { x: new Date(2017, 5, 1), y: 10000.55 },
-            { x: new Date(2017, 6, 1), y: 10000.55 },
-            { x: new Date(2017, 7, 1), y: 10000.55 },
-            { x: new Date(2017, 8, 1), y: 10000.55 },
-            { x: new Date(2017, 9, 1), y: 10000.55 },
-            { x: new Date(2017, 10, 1), y: 10000.55 },
-            { x: new Date(2017, 11, 1), y: 10000.55 }
+            { x: new Date(2017, 10, 4), y: 177450 },
+            { x: new Date(2017, 10, 6), y: 177450 },
+            { x: new Date(2017, 10, 8), y: 177450 },
+            { x: new Date(2017, 10, 10), y: 177450 },
+            { x: new Date(2017, 10, 12), y: 177450 },
+            { x: new Date(2017, 10, 14), y: 177450 },
+            { x: new Date(2017, 10, 16), y: 177450 },
+            { x: new Date(2017, 10, 18), y: 177450 },
+            { x: new Date(2017, 10, 20), y: 177450 }
           ]
         },
 
@@ -93,18 +89,15 @@ class ChartTrendParticle extends Component {
           xValueFormatString: "MMM YYYY",
           yValueFormatString: "#,##0",
           dataPoints: [
-            { x: new Date(2017, 0, 1), y: 0 },
-            { x: new Date(2017, 1, 1), y: 0 },
-            { x: new Date(2017, 2, 1), y: 0 },
-            { x: new Date(2017, 3, 1), y: 0 },
-            { x: new Date(2017, 4, 1), y: 0 },
-            { x: new Date(2017, 5, 1), y: 0 },
-            { x: new Date(2017, 6, 1), y: 0 },
-            { x: new Date(2017, 7, 1), y: 0 },
-            { x: new Date(2017, 8, 1), y: 0 },
-            { x: new Date(2017, 9, 1), y: 0 },
-            { x: new Date(2017, 10, 1), y: 0 },
-            { x: new Date(2017, 11, 1), y: 0 }
+            { x: new Date(2017, 10, 4), y: 0 },
+            { x: new Date(2017, 10, 6), y: 0 },
+            { x: new Date(2017, 10, 8), y: 0 },
+            { x: new Date(2017, 10, 10), y: 0 },
+            { x: new Date(2017, 10, 12), y: 0 },
+            { x: new Date(2017, 10, 14), y: 0 },
+            { x: new Date(2017, 10, 16), y: 0 },
+            { x: new Date(2017, 10, 18), y: 0 },
+            { x: new Date(2017, 10, 20), y: 0 }
           ]
         }
       ]

@@ -22,7 +22,9 @@ class ChartTrendMicrobiology extends Component {
       theme: "light2",
       animationEnabled: true,
       title: {
-        text: "Trend EM Microbiology "
+        text:
+          'Trend EM Microbiology AS Class LAF/D, CA Class LAF/D A-103 \n"Bagian Hewan Produksi"\n',
+        fontSize: 20
       },
       axisX: {
         title: "Date"
@@ -50,18 +52,13 @@ class ChartTrendMicrobiology extends Component {
           xValueFormatString: "MMM YYYY",
           yValueFormatString: "#,##0 ",
           dataPoints: [
-            { x: new Date(2017, 0, 1), y: 19034.5 },
-            { x: new Date(2017, 1, 1), y: 20015 },
-            { x: new Date(2017, 2, 1), y: 27342 },
-            { x: new Date(2017, 3, 1), y: 20088 },
-            { x: new Date(2017, 4, 1), y: 20234 },
-            { x: new Date(2017, 5, 1), y: 29034 },
-            { x: new Date(2017, 6, 1), y: 30487 },
-            { x: new Date(2017, 7, 1), y: 32523 },
-            { x: new Date(2017, 8, 1), y: 20234 },
-            { x: new Date(2017, 9, 1), y: 27234 },
-            { x: new Date(2017, 10, 1), y: 33548 },
-            { x: new Date(2017, 11, 1), y: 32534 }
+            { x: new Date(2017, 9, 30), y: 30 },
+            { x: new Date(2017, 10, 7), y: 30 },
+            { x: new Date(2017, 10, 14), y: 30 },
+            { x: new Date(2017, 10, 21), y: 30 },
+            { x: new Date(2017, 10, 28), y: 30 },
+            { x: new Date(2017, 11, 4), y: 30 },
+            { x: new Date(2017, 11, 11), y: 30 }
           ]
         },
         {
@@ -71,18 +68,13 @@ class ChartTrendMicrobiology extends Component {
           xValueFormatString: "MMM YYYY",
           yValueFormatString: "#,##0",
           dataPoints: [
-            { x: new Date(2017, 0, 1), y: 10000.55 },
-            { x: new Date(2017, 1, 1), y: 10000.55 },
-            { x: new Date(2017, 2, 1), y: 10000.55 },
-            { x: new Date(2017, 3, 1), y: 10000.55 },
-            { x: new Date(2017, 4, 1), y: 10000.55 },
-            { x: new Date(2017, 5, 1), y: 10000.55 },
-            { x: new Date(2017, 6, 1), y: 10000.55 },
-            { x: new Date(2017, 7, 1), y: 10000.55 },
-            { x: new Date(2017, 8, 1), y: 10000.55 },
-            { x: new Date(2017, 9, 1), y: 10000.55 },
-            { x: new Date(2017, 10, 1), y: 10000.55 },
-            { x: new Date(2017, 11, 1), y: 10000.55 }
+            { x: new Date(2017, 9, 30), y: 50 },
+            { x: new Date(2017, 10, 7), y: 50 },
+            { x: new Date(2017, 10, 14), y: 50 },
+            { x: new Date(2017, 10, 21), y: 50 },
+            { x: new Date(2017, 10, 28), y: 50 },
+            { x: new Date(2017, 11, 4), y: 50 },
+            { x: new Date(2017, 11, 11), y: 50 }
           ]
         },
 
@@ -93,18 +85,13 @@ class ChartTrendMicrobiology extends Component {
           xValueFormatString: "MMM YYYY",
           yValueFormatString: "#,##0",
           dataPoints: [
-            { x: new Date(2017, 0, 1), y: 0 },
-            { x: new Date(2017, 1, 1), y: 0 },
-            { x: new Date(2017, 2, 1), y: 0 },
-            { x: new Date(2017, 3, 1), y: 0 },
-            { x: new Date(2017, 4, 1), y: 0 },
-            { x: new Date(2017, 5, 1), y: 0 },
-            { x: new Date(2017, 6, 1), y: 0 },
-            { x: new Date(2017, 7, 1), y: 0 },
-            { x: new Date(2017, 8, 1), y: 0 },
-            { x: new Date(2017, 9, 1), y: 0 },
-            { x: new Date(2017, 10, 1), y: 0 },
-            { x: new Date(2017, 11, 1), y: 0 }
+            { x: new Date(2017, 9, 30), y: 0 },
+            { x: new Date(2017, 10, 7), y: 0 },
+            { x: new Date(2017, 10, 14), y: 0 },
+            { x: new Date(2017, 10, 21), y: 0 },
+            { x: new Date(2017, 10, 28), y: 0 },
+            { x: new Date(2017, 11, 4), y: 0 },
+            { x: new Date(2017, 11, 11), y: 0 }
           ]
         }
       ]

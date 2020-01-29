@@ -2,6 +2,9 @@ import React, { Component, Fragment } from "react";
 import { Col, Card, Row, Button } from "antd";
 import DropperToCsv from "./tabs/component/DropperToCsv";
 import RadialChartCard from "./tabs/component/RadialChartCard";
+import ChartKPIIntervalDay from "./tabs/component/Chart KPI Interval Day";
+import ChartCountPercentage from "./tabs/component/Chart Count Percentage";
+import ChartPercentageSampleStatus from "./tabs/component/Chart Percentage Sample Status";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 class KeyPerformaceIndicator extends Component {
@@ -33,26 +36,24 @@ class KeyPerformaceIndicator extends Component {
                   <Card title="Tampilan Grafik Environment Monitoring Bagian Produksi PT Biofarma">
                     <div className="gutter-example">
                       <Row gutter={1}>
-                        <Col className="gutter-row">
+                        <Col className="gutter-row" sm={24} md={12}>
                           <Card title="Key Performance Indicator">
-                            {importedData ? (
-                              <RadialChartCard
-                                type="keyPerformanceIndicator"
-                                data={importedData}
-                              />
-                            ) : (
-                              <div />
-                            )}
+                            <ChartPercentageSampleStatus />
                           </Card>
                         </Col>
-                        {/* <Col className="gutter-row" sm={24} md={12}>
-                          <Card title="Demografi Pendidikan">
-                            <RadialChartCard
-                              type="demografiPendidikan"
-                              data={importedData}
-                            />
+                        {/* COLUMN */}
+                        <Col className="gutter-row" sm={24} md={12}>
+                          <Card title=".                 ">
+                            <ChartKPIIntervalDay />
                           </Card>
-                        </Col> */}
+                        </Col>
+                      </Row>
+                      <Row gutter={1}>
+                        <Col className="gutter-row">
+                          <Card>
+                            <ChartCountPercentage />
+                          </Card>
+                        </Col>
                       </Row>
                     </div>
                   </Card>

@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { Col, Card, Row, Button } from "antd";
 import DropperToCsv from "./tabs/component/DropperToCsv";
 import ChartTrendParticle from "./tabs/component/Chart Trend Particle";
+import { CsvToHtmlTable } from "react-csv-to-table";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 class TrendParticle extends Component {
@@ -38,7 +39,10 @@ class TrendParticle extends Component {
                             <ChartTrendParticle type="trendParticle" />
                           </Card>
                           <Card title="                            ">
-                            <ChartTrendParticle type="trendParticle" />
+                            {/* <CsvToHtmlTable 
+                            data = {importedData}
+                            csvDelimiter=";"
+                            /> */}
                           </Card>
                         </Col>
                       </Row>
