@@ -24,12 +24,7 @@ class Dashboard extends Component {
     if (!auth.uid) {
       return <Redirect to="/login" />;
     }
-    return (
-      // <React.Fragment>
-      //   <Card>dashbord ini merupakan </Card>
-      // </React.Fragment>
-      null
-    );
+    return null;
   }
 }
 const mapStateToProps = state => {};

@@ -38,12 +38,6 @@ class TrendParticle extends Component {
                           <Card title="Trend Environment Monitoring Particle">
                             <ChartTrendParticle type="trendParticle" />
                           </Card>
-                          <Card title="                            ">
-                            {/* <CsvToHtmlTable 
-                            data = {importedData}
-                            csvDelimiter=";"
-                            /> */}
-                          </Card>
                         </Col>
                       </Row>
                     </div>

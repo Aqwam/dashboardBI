@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Col, Card, Row, Button } from "antd";
 import DropperToCsv from "./tabs/component/DropperToCsv";
-import RadialChartCard from "./tabs/component/RadialChartCard";
 import ChartKPIIntervalDay from "./tabs/component/Chart KPI Interval Day";
 import ChartCountPercentage from "./tabs/component/Chart Count Percentage";
 import ChartPercentageSampleStatus from "./tabs/component/Chart Percentage Sample Status";
@@ -41,7 +40,6 @@ class KeyPerformaceIndicator extends Component {
                             <ChartPercentageSampleStatus />
                           </Card>
                         </Col>
-                        {/* COLUMN */}
                         <Col className="gutter-row" sm={24} md={12}>
                           <Card title=".                 ">
                             <ChartKPIIntervalDay />

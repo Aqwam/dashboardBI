@@ -1,14 +1,8 @@
-import React, {
-  useState
-  //  Fragment
-} from "react";
-// import { InputNumber, Input, Col, Row, Card, Button } from "antd";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { Button } from "antd";
-// import { Redirect } from "react-router-dom";
-// import _ from "lodash";
 
 function Playground() {
   const [count, setCount] = useState(0);
@@ -32,9 +26,6 @@ const mapDispatchToProps = dispatch => {
   return {};
 };
 export default compose(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
+  connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect([{ collection: "products" }])
 )(Playground);

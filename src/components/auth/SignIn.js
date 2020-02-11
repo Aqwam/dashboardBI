@@ -12,15 +12,6 @@ class SignInForm extends Component {
       warning: ""
     };
   }
-  // componentDidUpdate(prevProps) {
-  //     if (!_.isEqual(prevProps, this.props)) {
-  //         if (this.props.auth.uid == null) {
-  //             return message.error("Username atau Password salah !");
-  //         } else {
-  //             console.log("berhasil");
-  //         }
-  //     }
-  // }
 
   handleChange = e => {
     this.setState({
@@ -144,7 +135,4 @@ const mapStateToProps = state => {
   };
 };
 const SignIn = Form.create()(SignInForm);
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SignIn);
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
